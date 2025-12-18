@@ -1,0 +1,15 @@
+{
+  "python.defaultInterpreterPath": ".\\alba-wing\\Scripts\\python.exe",
+
+  "editor.formatOnSave": true,
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  "black-formatter.args": [
+    "--line-length",
+    "88"
+  ]
+}
+

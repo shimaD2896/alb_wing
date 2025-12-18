@@ -16,29 +16,29 @@ ProjectName = "5wing"
 # 翼型を保管しておき、コマンドファイルを出2024詩集版力するディレクトリのPath
 Directory = r"C:\Users\islan\OneDrive - OUMail (Osaka University)\ribwriting"
 # テキストファイルに追加書き込みするか、すべて消して新たに書き込むか
-kakikomi = "w"  #追加書き込みなら"a"、消して新たに書き込みなら"w"
+kakikomi = "w"  # 追加書き込みなら"a"、消して新たに書き込みなら"w"
 
 # 翼関連
 # 端、根の翼弦長(流れ方向)[mm]
 # 0、1翼
-#RootChord_original = 1250
-#EndChord_original = 1250
+# RootChord_original = 1250
+# EndChord_original = 1250
 # 2翼
-#RootChord_original = 1250
-#EndChord_original = 1075
+# RootChord_original = 1250
+# EndChord_original = 1075
 # 3翼
-#RootChord_original = 1075
-#EndChord_original = 903
+# RootChord_original = 1075
+# EndChord_original = 903
 # 4翼
-#RootChord_original = 903
-#EndChord_original = 749.49
+# RootChord_original = 903
+# EndChord_original = 749.49
 # 5翼
 RootChord_original = 749.49
 EndChord_original = 465
 
 # 端、根のねじり上げ(流れ方向)[°]
 RootDelta = 0
-#EndDelta = 0
+# EndDelta = 0
 # 5翼
 EndDelta = -2
 # 端、根の桁位置[%]
@@ -51,15 +51,15 @@ EndFoilName = "DAE-41.dat"
 n_original = 17
 # 分割してリブを出力
 isUseBunkatuShuturyoku = True
-startRib = 12  # 何枚目から出力を行うか
-endRib = 16 # 何枚目まで出力するか
+startRib = 1  # 何枚目から出力を行うか
+endRib = 17  # 何枚目まで出力するか
 
 # 何翼?
 PlaneNumber = "5"
 # 半リブあり?
 use_half = True
 # 半リブは何枚目か
-halfRibNumber = [3,5,7,9,11,13,15]
+halfRibNumber = [3, 5, 7, 9, 11, 13, 15]
 # 上反角を付けるために桁をy軸方向へ移動させるか？
 use_JouhannkakuChousei = False
 # 各リブのy軸の移動量をxに対応する翼厚みに対する％でリスト形式で渡す
@@ -77,28 +77,28 @@ tu = 0.03
 td = 0.03
 # 桁径[mm]	楕円の短軸方向
 # 0翼
-#d = 132.72
+# d = 132.72
 # 1翼
-#d = 122.448
+# d = 122.448
 # 2翼
-#d = 101.832
+# d = 101.832
 # 3翼
-#d = 90.916
+# d = 90.916
 # 4翼
-#d = 71.466
+# d = 71.466
 # 5翼
 d = 41.166
 # 桁径		楕円の長軸-短軸 円なら0
 # 0翼
-#dd = 134.496 - d
+# dd = 134.496 - d
 # 1翼
-#dd = 124.224 - d
+# dd = 124.224 - d
 # 2翼
-#dd = 103.608 - d
+# dd = 103.608 - d
 # 3翼
-#dd = 92.47 - d
+# dd = 92.47 - d
 # 4翼
-#dd = 72.132 - d
+# dd = 72.132 - d
 # 5翼
 dd = 41.166 - d
 # アセンブリ棒径[mm]
@@ -108,13 +108,13 @@ h = 7
 # 🐧の前縁側の高さ[mm]
 htu = 6
 # 🐧の後縁側の前縁に対する長さ(翼弦長に対する％）[％]
-#Dadlength = 1.8
+# Dadlength = 1.8
 # htd = 12
 # penguinの上下それぞれの大体の長さ
 # penguinlength_upper = 50
 penguinlength_lower = 60
 # ハーフリブのカットラインと桁穴の余裕[mm]
-halfRibYoyuu = 6 #普通は５くらい
+halfRibYoyuu = 6  # 普通は５くらい
 # 後縁材の長さ[mm]
 Traillength = 30
 
@@ -139,30 +139,30 @@ w_circle = 15
 # 主翼用設定値
 # プランク上開始位置[%]
 # 0,1,2,3翼
-#rpur = 63
-#rpue = 63
+# rpur = 63
+# rpue = 63
 # 4翼
-#rpur = 63
-#rpue = 60
+# rpur = 63
+# rpue = 60
 # 5翼
 rpur = 60
 rpue = 61
 
 # プランク下開始位置[%] r plank downside
 # 0,1,2,3翼
-#rpdr = 12
-#rpde = 12
+# rpdr = 12
+# rpde = 12
 # 4翼
-#rpdr = 23
-#rpde = 23
+# rpdr = 23
+# rpde = 23
 # 5翼
 rpdr = 25
 rpde = 25
 
 # # 尾翼用設定値
-#rpu = 30
+# rpu = 30
 # プランク下開始位置[%] r plank downside
-#rpd = 30
+# rpd = 30
 
 # ストリンガー下後縁側位置[%] r stringer downside trailing edge #半リブの切り取り線に依存
 rsdt = RootR + 10
@@ -174,50 +174,50 @@ xsl = 20 + e
 # 主翼設定値
 # ストリンガー位置翼上部[%]
 # 0,1翼
-#rootstringerURate = [4, 12.5, 60.6]
-#endstringerURate = [4, 12.5, 60.6]
+# rootstringerURate = [4, 12.5, 60.6]
+# endstringerURate = [4, 12.5, 60.6]
 # 2翼
-#rootstringerURate = [4, 12.5, 60.6]
-#endstringerURate = [4, 12.5, 60.2]
+# rootstringerURate = [4, 12.5, 60.6]
+# endstringerURate = [4, 12.5, 60.2]
 # 3翼
-#rootstringerURate = [4, 12.5, 60.2]
-#endstringerURate = [4, 12.5, 59.7]
+# rootstringerURate = [4, 12.5, 60.2]
+# endstringerURate = [4, 12.5, 59.7]
 # 4翼
-#rootstringerURate = [4,12.5,59.7]
-#endstringerURate = [4,12.5, 56.8]
+# rootstringerURate = [4,12.5,59.7]
+# endstringerURate = [4,12.5, 56.8]
 # 5翼
 rootstringerURate = [4, 12.5, 57]
 endstringerURate = [4, 12.5, 57]
 
 # ストリンガー位置翼下部[%]
 # 0翼
-#rootstringerDRate = [4.5,9,54]
-#endstringerDRate = [4.5,9,54]
+# rootstringerDRate = [4.5,9,54]
+# endstringerDRate = [4.5,9,54]
 # 1翼
-#rootstringerDRate = [4.5,9,54]
-#endstringerDRate = [4.5,9,54]
+# rootstringerDRate = [4.5,9,54]
+# endstringerDRate = [4.5,9,54]
 # 2翼
-#rootstringerDRate = [4.5,9,54]
-#endstringerDRate = [4.5,9,54]
+# rootstringerDRate = [4.5,9,54]
+# endstringerDRate = [4.5,9,54]
 # 3翼
-#rootstringerDRate = [4.5,9,54]
-#endstringerDRate = [4.5,9,54]
+# rootstringerDRate = [4.5,9,54]
+# endstringerDRate = [4.5,9,54]
 # 4翼
-#rootstringerDRate = [4.5,20,54]
-#endstringerDRate = [5,20,54]
+# rootstringerDRate = [4.5,20,54]
+# endstringerDRate = [5,20,54]
 # 5翼
-rootstringerDRate = [5,20,52]
-endstringerDRate = [5,20,52]
+rootstringerDRate = [5, 20, 52]
+endstringerDRate = [5, 20, 52]
 
 # # 尾翼用
 # ストリンガー位置翼上部[%]
-#stringerU1Rate = 4
-#stringerU2Rate = 10
-#stringerU3Rate = 65
+# stringerU1Rate = 4
+# stringerU2Rate = 10
+# stringerU3Rate = 65
 # ストリンガー位置翼下部[%]
-#stringerD1Rate = 4
-#stringerD2Rate = 10
-#stringerD3Rate = 65
+# stringerD1Rate = 4
+# stringerD2Rate = 10
+# stringerD3Rate = 65
 
 
 # トラス肉抜きを行うための基準点を指定する(翼弦に対する％表示で設定を行う)
@@ -234,8 +234,25 @@ rootnikunukiBasePoint_d_Kouenn = [43, 49.9, 52, 54.22, 60.4, 62.5, 64.73, 70]
 rootsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.25, -0.25, -0.25, -0.25, -0.21]
 rootsannkakunukunuki_base_move_y_d_zenenn = [0.25, 0.25, 0.25, 0.23, 0.25, 0.25]
 ## 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも後縁側)
-rootsannkakunukunuki_base_move_y_u_kouenn = [-0.22, -0.26, -0.29, -0.25, -0.25, -0.3, -0.3]
-rootsannkakunukunuki_base_move_y_d_kouenn = [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.28, 0.3]
+rootsannkakunukunuki_base_move_y_u_kouenn = [
+    -0.22,
+    -0.26,
+    -0.29,
+    -0.25,
+    -0.25,
+    -0.3,
+    -0.3,
+]
+rootsannkakunukunuki_base_move_y_d_kouenn = [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.28,
+    0.3,
+]
 # ハーフリブを利用する際の肉抜き
 rootnikunukiBasePoint_u_Kouenn_half = [46, 54]
 # 各肉抜き点のy座標方向の移動
@@ -243,7 +260,7 @@ rootsannkakunukunuki_base_move_y_u_kouenn_half = [-0.15, -0.15]
 
 # 前縁側上面
 endnikunukiBasePoint_u_Zenenn = [5.5, 10.87, 13.4, 15.5, 24.05, 26.8]
-# 前縁側下面    
+# 前縁側下面
 endnikunukiBasePoint_d_Zenenn = [8.22, 10.4, 17.38, 20.02, 22.5, 31.5]
 # 後縁側上面
 endnikunukiBasePoint_u_Kouenn = [46.28, 48.72, 55.22, 57.5, 59.77, 65.1, 67.07]
@@ -253,8 +270,25 @@ endnikunukiBasePoint_d_Kouenn = [43, 49.9, 52, 54.22, 60.4, 62.5, 64.73, 70]
 endsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.25, -0.25, -0.25, -0.25, -0.21]
 endsannkakunukunuki_base_move_y_d_zenenn = [0.25, 0.25, 0.25, 0.23, 0.25, 0.25]
 # 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも後縁側)
-endsannkakunukunuki_base_move_y_u_kouenn = [-0.22, -0.26, -0.29, -0.25, -0.25, -0.3, -0.3]
-endsannkakunukunuki_base_move_y_d_kouenn = [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.28, 0.3]
+endsannkakunukunuki_base_move_y_u_kouenn = [
+    -0.22,
+    -0.26,
+    -0.29,
+    -0.25,
+    -0.25,
+    -0.3,
+    -0.3,
+]
+endsannkakunukunuki_base_move_y_d_kouenn = [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.28,
+    0.3,
+]
 # ハーフリブを利用する際の肉抜き
 endnikunukiBasePoint_u_Kouenn_half = [46, 54]
 # 各肉抜き点のy座標方向の移動
@@ -454,19 +488,20 @@ def WriteEllipse(file, ell, O=vector(0, 0)):
         f"ellipse\nc\n{ell.C.x+O.x},{ell.C.y+O.y}\n{ell.P.x+O.x},{ell.P.y+O.y}\n{ell.b}\n"
     )
 
-def WriteARC(file, center, P1, P2, O=vector(0,0)):
+
+def WriteARC(file, center, P1, P2, O=vector(0, 0)):
     """中心center、始点P1、終点P2の円弧を描くコマンドをfileに出力"""
     file.write(
         f"arc\n_c\n{center.x+O.x},{center.y+O.y}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n\n"
     )
 
-def fillet(file, P1, P2, r, O=vector(0,0)):
+
+def fillet(file, P1, P2, r, O=vector(0, 0)):
     """三角肉抜き穴の角を丸めるコマンドをfileに出力
     P1,P2をそれぞれ通る線の角を半径rで丸める"""
-    file.write(
-        f"fillet\n_r\n{r}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n"
-    )
-    
+    file.write(f"fillet\n_r\n{r}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n")
+
+
 def WriteCircle(file, circle, O=vector(0, 0), WriteCenter=True):
     """circleオブジェクトを出力するコマンドを出力"""
     file.write(
@@ -734,7 +769,7 @@ RootFoilDataD_y = to_numpy_y(RootFoilDataD)  # 下側のy座標(無次元)
 f_uEnd = inter(
     EndFoilDataU_x[::-1] * EndChord * cos(sweep), EndFoilDataU_y[::-1] * EndChord
 )
-f_dEnd = inter(EndFoilDataD_x * EndChord* cos(sweep), EndFoilDataD_y * EndChord)
+f_dEnd = inter(EndFoilDataD_x * EndChord * cos(sweep), EndFoilDataD_y * EndChord)
 f_uRoot = inter(
     RootFoilDataU_x[::-1] * RootChord * cos(sweep), RootFoilDataU_y[::-1] * RootChord
 )
@@ -767,7 +802,7 @@ Oa = define_Oa(
     - EndPipeO,
 )
 
-file = open(f"{ProjectName}.txt", kakikomi,encoding="utf-8")
+file = open(f"{ProjectName}.txt", kakikomi, encoding="utf-8")
 
 file.write("texted\n1\n")  # textをコマンドで入力できるように設定
 file.write("-lweight\n0.001\n")  # 線の太さ設定
@@ -778,8 +813,8 @@ y_u, y_d = [], []  # 定義前に使うと誤解されないように
 if kakikomi == "a":
     O.x -= RootChord_original + 10
 
-for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
-    
+for k in range(startRib, endRib + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
+
     # y座標の設定 かぶらないようにするため。1cmの隙間もあける
     if k > startRib:  # k=1のときO=(0,0)にしている
         O.y -= numpy.max(y_u) - numpy.min(y_d) + 100
@@ -820,7 +855,7 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     f_d = inter(x_d, y_d)
     del s
 
-    #上面のプランク位置の遷移
+    # 上面のプランク位置の遷移
     rpu = rpur + (rpue - rpur) * r
 
     # 下面のプランク位置の遷移
@@ -837,8 +872,12 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     del s
 
     # ストリンガー位置の遷移
-    stringerURate = [x + (y - x)*r for x, y in zip(rootstringerURate, endstringerURate)]
-    stringerDRate = [x + (y - x)*r for x, y in zip(rootstringerDRate, endstringerDRate)] 
+    stringerURate = [
+        x + (y - x) * r for x, y in zip(rootstringerURate, endstringerURate)
+    ]
+    stringerDRate = [
+        x + (y - x) * r for x, y in zip(rootstringerDRate, endstringerDRate)
+    ]
 
     # 境目になるようなx座標を定義する
     x_plank_u = c * (rpu / 100) * cos(sweep)
@@ -849,7 +888,7 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     x_stringer_D1 = c * (stringerDRate[0] / 100) * cos(sweep)
     x_stringer_D2 = c * (stringerDRate[1] / 100) * cos(sweep)
     x_stringer_D3 = c * (stringerDRate[2] / 100) * cos(sweep)
-    x_stringer_dt = c * (rsdt / 100 )* cos(sweep)
+    x_stringer_dt = c * (rsdt / 100) * cos(sweep)
     x_pipe = c * (RootR + (EndR - RootR) * r) / 100 * cos(sweep)
     x_25pc = c * cos(sweep) * 0.25
 
@@ -872,11 +911,13 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     )
 
     # ストリンガーの出力
-    StringerU = stringer(div_P(PlankPs[0], PlankPs[1], x_plank_u, 0), PlankPs[1], e, R=True)
+    StringerU = stringer(
+        div_P(PlankPs[0], PlankPs[1], x_plank_u, 0), PlankPs[1], e, R=True
+    )
     StringerDL = stringer(
         div_P(PlankPs[-1], PlankPs[-2], x_plank_d, 0), PlankPs[-2], e, R=True
     )  # leading edge
-    PlankPs.insert(0,StringerU.A)
+    PlankPs.insert(0, StringerU.A)
     PlankPs.append(StringerDL.A)
 
     EdgeDT = [
@@ -962,6 +1003,7 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     stringerD3ToVec = stringer(
         div_P(stringerD3[0], stringerD3[1], x_stringer_D3, 0), stringerD3[0], e, R=True
     )
+
     # 上反角の調整用関数
     def calucaulateYokuaAtumi(x):
         y_up = f_u(x)
@@ -971,13 +1013,15 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     # 桁穴の出力
     delta = RootDelta + (EndDelta - RootDelta) * r
     RibAngle = math.atan(tan((alpha + delta) * numpy.pi / 180) * cos(sweep))
-    Pipe_C = vector(x_pipe, f_camber(x_pipe) - tp/2) #桁穴中心の座標、y座標の中心はプランクのオフセット後のリブの中点
+    Pipe_C = vector(
+        x_pipe, f_camber(x_pipe) - tp / 2
+    )  # 桁穴中心の座標、y座標の中心はプランクのオフセット後のリブの中点
     # 上反角に関する桁穴のy座標の移動
     if use_JouhannkakuChousei:
         lengthOfMoveY = y_chousei[k - 1] * calucaulateYokuaAtumi(x_pipe) / 100
-        Pipe_C = vector(x_pipe, f_camber(x_pipe) + lengthOfMoveY -tp/2)
+        Pipe_C = vector(x_pipe, f_camber(x_pipe) + lengthOfMoveY - tp / 2)
     else:
-        Pipe_C = vector(x_pipe, f_camber(x_pipe) - tp/2)
+        Pipe_C = vector(x_pipe, f_camber(x_pipe) - tp / 2)
     Pipe = ellipse(
         Pipe_C, Pipe_C + vector(0, 1).rotate(RibAngle, "radian") * (d + dd) / 2, d / 2
     )
@@ -1012,8 +1056,8 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     TrailU = vector(TrailU_x, f_u(TrailU_x))
     del s
 
-    #TrailD_x =  TrailU_x - (c*Dadlength/100)  # -10は勘
-    TrailD_x = (c - penguinlength_lower )* cos(sweep)
+    # TrailD_x =  TrailU_x - (c*Dadlength/100)  # -10は勘
+    TrailD_x = (c - penguinlength_lower) * cos(sweep)
     TrailD = vector(TrailD_x, f_d(TrailD_x))
     """
     # 🐧の下側の一点を求める。 TrailUを挟む点を求め、これら三点でoffsetする。
@@ -1033,9 +1077,13 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     TrailC = vector(TrailC_x, f_camber(TrailC_x))
     """
     # 後縁材の出力
-    realTrailD_x = optimize.newton(lambda x: (c - x)**2 + f_d(x)**2 - Traillength**2, c * cos(sweep) * 0.95)
+    realTrailD_x = optimize.newton(
+        lambda x: (c - x) ** 2 + f_d(x) ** 2 - Traillength**2, c * cos(sweep) * 0.95
+    )
     realTrailD = vector(realTrailD_x, f_d(realTrailD_x))
-    realTrailU_x = optimize.newton(lambda x: (c - x)**2 + f_u(x)**2 - Traillength**2, c * cos(sweep) * 0.95)
+    realTrailU_x = optimize.newton(
+        lambda x: (c - x) ** 2 + f_u(x) ** 2 - Traillength**2, c * cos(sweep) * 0.95
+    )
     realTrailU = vector(realTrailU_x, f_u(realTrailU_x))
     # 前縁材出力
     # Relation関数を用いて前縁材の点を出力する LeadDは最初から最前縁の点は含んでいない
@@ -1117,8 +1165,8 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
         return sannkakkeiObject
 
     # sannkakeiObjectから肉抜き穴を出力する
-    def makeSannkakuNinuki(file, sannkakuNikunukiObject):     
-        
+    def makeSannkakuNinuki(file, sannkakuNikunukiObject):
+
         line(
             file,
             sannkakuNikunukiObject["basepoint_1_vec"],
@@ -1138,43 +1186,125 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
             O,
         )
 
-        r = abs((sannkakuNikunukiObject["basepoint_1_vec"] + sannkakuNikunukiObject["basepoint_2_vec"] + sannkakuNikunukiObject["basepoint_3_vec"])/3 - sannkakuNikunukiObject["basepoint_1_vec"])/7
-        
+        r = (
+            abs(
+                (
+                    sannkakuNikunukiObject["basepoint_1_vec"]
+                    + sannkakuNikunukiObject["basepoint_2_vec"]
+                    + sannkakuNikunukiObject["basepoint_3_vec"]
+                )
+                / 3
+                - sannkakuNikunukiObject["basepoint_1_vec"]
+            )
+            / 7
+        )
+
         fillet(
             file,
-            (sannkakuNikunukiObject["basepoint_1_vec"] + sannkakuNikunukiObject["basepoint_2_vec"])/2,
-            (sannkakuNikunukiObject["basepoint_2_vec"] + sannkakuNikunukiObject["basepoint_3_vec"])/2,
+            (
+                sannkakuNikunukiObject["basepoint_1_vec"]
+                + sannkakuNikunukiObject["basepoint_2_vec"]
+            )
+            / 2,
+            (
+                sannkakuNikunukiObject["basepoint_2_vec"]
+                + sannkakuNikunukiObject["basepoint_3_vec"]
+            )
+            / 2,
             r,
             O,
         )
 
         fillet(
             file,
-            (sannkakuNikunukiObject["basepoint_2_vec"] + sannkakuNikunukiObject["basepoint_3_vec"])/2,
-            (sannkakuNikunukiObject["basepoint_3_vec"] + sannkakuNikunukiObject["basepoint_1_vec"])/2,
+            (
+                sannkakuNikunukiObject["basepoint_2_vec"]
+                + sannkakuNikunukiObject["basepoint_3_vec"]
+            )
+            / 2,
+            (
+                sannkakuNikunukiObject["basepoint_3_vec"]
+                + sannkakuNikunukiObject["basepoint_1_vec"]
+            )
+            / 2,
             r,
             O,
         )
 
         fillet(
             file,
-            (sannkakuNikunukiObject["basepoint_3_vec"] + sannkakuNikunukiObject["basepoint_1_vec"])/2,
-            (sannkakuNikunukiObject["basepoint_1_vec"] + sannkakuNikunukiObject["basepoint_2_vec"])/2,
+            (
+                sannkakuNikunukiObject["basepoint_3_vec"]
+                + sannkakuNikunukiObject["basepoint_1_vec"]
+            )
+            / 2,
+            (
+                sannkakuNikunukiObject["basepoint_1_vec"]
+                + sannkakuNikunukiObject["basepoint_2_vec"]
+            )
+            / 2,
             r,
             O,
         )
 
     # 肉抜き位置の遷移
-    nikunukiBasePoint_u_Zenenn = [x + (y - x)*r for x, y in zip(rootnikunukiBasePoint_u_Zenenn, endnikunukiBasePoint_u_Zenenn)]
-    nikunukiBasePoint_d_Zenenn = [x + (y - x)*r for x, y in zip(rootnikunukiBasePoint_d_Zenenn, endnikunukiBasePoint_d_Zenenn)]
-    nikunukiBasePoint_u_Kouenn = [x + (y - x)*r for x, y in zip(rootnikunukiBasePoint_u_Kouenn, endnikunukiBasePoint_u_Kouenn)]
-    nikunukiBasePoint_d_Kouenn = [x + (y - x)*r for x, y in zip(rootnikunukiBasePoint_d_Kouenn, endnikunukiBasePoint_d_Kouenn)]
-    sannkakunukunuki_base_move_y_u_zenenn = [x + (y - x)*r for x, y in zip(rootsannkakunukunuki_base_move_y_u_zenenn, endsannkakunukunuki_base_move_y_u_zenenn)]
-    sannkakunukunuki_base_move_y_d_zenenn = [x + (y - x)*r for x, y in zip(rootsannkakunukunuki_base_move_y_d_zenenn, endsannkakunukunuki_base_move_y_d_zenenn)]
-    sannkakunukunuki_base_move_y_u_kouenn = [x + (y - x)*r for x, y in zip(rootsannkakunukunuki_base_move_y_u_kouenn, endsannkakunukunuki_base_move_y_u_kouenn)]
-    sannkakunukunuki_base_move_y_d_kouenn = [x + (y - x)*r for x, y in zip(rootsannkakunukunuki_base_move_y_d_kouenn, endsannkakunukunuki_base_move_y_d_kouenn)]
-    nikunukiBasePoint_u_Kouenn_half = [x + (y - x)*r for x, y in zip(rootnikunukiBasePoint_u_Kouenn_half, endnikunukiBasePoint_u_Kouenn_half)]
-    sannkakunukunuki_base_move_y_u_kouenn_half = [x + (y - x)*r for x, y in zip(rootsannkakunukunuki_base_move_y_u_kouenn_half, endsannkakunukunuki_base_move_y_u_kouenn_half)]
+    nikunukiBasePoint_u_Zenenn = [
+        x + (y - x) * r
+        for x, y in zip(rootnikunukiBasePoint_u_Zenenn, endnikunukiBasePoint_u_Zenenn)
+    ]
+    nikunukiBasePoint_d_Zenenn = [
+        x + (y - x) * r
+        for x, y in zip(rootnikunukiBasePoint_d_Zenenn, endnikunukiBasePoint_d_Zenenn)
+    ]
+    nikunukiBasePoint_u_Kouenn = [
+        x + (y - x) * r
+        for x, y in zip(rootnikunukiBasePoint_u_Kouenn, endnikunukiBasePoint_u_Kouenn)
+    ]
+    nikunukiBasePoint_d_Kouenn = [
+        x + (y - x) * r
+        for x, y in zip(rootnikunukiBasePoint_d_Kouenn, endnikunukiBasePoint_d_Kouenn)
+    ]
+    sannkakunukunuki_base_move_y_u_zenenn = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootsannkakunukunuki_base_move_y_u_zenenn,
+            endsannkakunukunuki_base_move_y_u_zenenn,
+        )
+    ]
+    sannkakunukunuki_base_move_y_d_zenenn = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootsannkakunukunuki_base_move_y_d_zenenn,
+            endsannkakunukunuki_base_move_y_d_zenenn,
+        )
+    ]
+    sannkakunukunuki_base_move_y_u_kouenn = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootsannkakunukunuki_base_move_y_u_kouenn,
+            endsannkakunukunuki_base_move_y_u_kouenn,
+        )
+    ]
+    sannkakunukunuki_base_move_y_d_kouenn = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootsannkakunukunuki_base_move_y_d_kouenn,
+            endsannkakunukunuki_base_move_y_d_kouenn,
+        )
+    ]
+    nikunukiBasePoint_u_Kouenn_half = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootnikunukiBasePoint_u_Kouenn_half, endnikunukiBasePoint_u_Kouenn_half
+        )
+    ]
+    sannkakunukunuki_base_move_y_u_kouenn_half = [
+        x + (y - x) * r
+        for x, y in zip(
+            rootsannkakunukunuki_base_move_y_u_kouenn_half,
+            endsannkakunukunuki_base_move_y_u_kouenn_half,
+        )
+    ]
 
     # トラス肉抜きを出力する
     sankakkeiObject_1 = makeSannkakuNikunukiObject(
@@ -1226,7 +1356,7 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     makeSannkakuNinuki(file, sankakkeiObject_3)
     makeSannkakuNinuki(file, sankakkeiObject_4)
 
-    if k not in halfRibNumber: 
+    if k not in halfRibNumber:
         sankakkeiObject_5 = makeSannkakuNikunukiObject(
             convertYokugennRateGaishuuyohakuToZahyou(
                 nikunukiBasePoint_u_Kouenn[0], sannkakunukunuki_base_move_y_u_kouenn[0]
@@ -1290,50 +1420,71 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
         makeSannkakuNinuki(file, sankakkeiObject_9)
 
     # half-Ribを利用する際のカットラインと肉抜きについて（halfリブ出力の際のみ）
-    if k  in halfRibNumber:
+    if k in halfRibNumber:
         # FoilDの範囲を指定
         FoilD1 = [P for P in FoilD if P.x <= x_pipe - 100]
         FoilD2 = [P for P in FoilD if P.x <= x_stringer_dt]
         FoilPs = FoilU + FoilD2[1:]  # FoilDは(0,0)を取り除く
-        #　上面のプランク端を出力
+        # 　上面のプランク端を出力
         Plankend_u = div_P(PlankPs[0], PlankPs[1], x_plank_u, 0)
 
         # 計算をわかりやすくするための便宜的なもの
-        ha = (Pipe_C.x - Plankend_u.x)
-        hb = (Pipe_C.y - Plankend_u.y)
-        hA = (Pipe_C.x - Plankend_u.x)**2
-        hB = (Pipe_C.y - Plankend_u.y)**2
-        hC = (((dd+d)/2) + halfRibYoyuu)**2
-
+        ha = Pipe_C.x - Plankend_u.x
+        hb = Pipe_C.y - Plankend_u.y
+        hA = (Pipe_C.x - Plankend_u.x) ** 2
+        hB = (Pipe_C.y - Plankend_u.y) ** 2
+        hC = (((dd + d) / 2) + halfRibYoyuu) ** 2
 
         # halfRibの線を出力
         # halfRibCutLine_d = findNearestPointBasedOnX(c * halfRibLine_d, FoilD)
         # 桁穴中心から桁穴半径＋余裕分の距離をたした点を通る線を出力
-        halfRibCutLine_d = vector(Plankend_u.x  - hA + hC,Plankend_u.y - (ha*hb) - math.sqrt((hA * hB) - (hA - hC)*(hB - hC)))
-        line(file,
-            Plankend_u, 
-            div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0), 
-            O)
+        halfRibCutLine_d = vector(
+            Plankend_u.x - hA + hC,
+            Plankend_u.y - (ha * hb) - math.sqrt((hA * hB) - (hA - hC) * (hB - hC)),
+        )
+        line(file, Plankend_u, div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0), O)
         print(div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0).y)
         # halfRibの肉抜き穴を出力
 
-        nikunukiKouenn_u_half1 = convertYokugennRateGaishuuyohakuToZahyou(nikunukiBasePoint_u_Kouenn_half[1],sannkakunukunuki_base_move_y_u_kouenn_half[1],)
-        nikunukiKouenn_d_half_x = c * ((nikunukiBasePoint_u_Kouenn_half[0] + ((nikunukiBasePoint_u_Kouenn_half[0] - nikunukiBasePoint_u_Kouenn_half[1])/4))/100) * cos(sweep)
-        nikunukiKouenn_d_half_y = nikunukiKouenn_u_half1[1] - ((Plankend_u.y - div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0).y)/(Plankend_u.x - div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0).x)) * (nikunukiKouenn_u_half1[0] - nikunukiKouenn_d_half_x)
+        nikunukiKouenn_u_half1 = convertYokugennRateGaishuuyohakuToZahyou(
+            nikunukiBasePoint_u_Kouenn_half[1],
+            sannkakunukunuki_base_move_y_u_kouenn_half[1],
+        )
+        nikunukiKouenn_d_half_x = (
+            c
+            * (
+                (
+                    nikunukiBasePoint_u_Kouenn_half[0]
+                    + (
+                        (
+                            nikunukiBasePoint_u_Kouenn_half[0]
+                            - nikunukiBasePoint_u_Kouenn_half[1]
+                        )
+                        / 4
+                    )
+                )
+                / 100
+            )
+            * cos(sweep)
+        )
+        nikunukiKouenn_d_half_y = nikunukiKouenn_u_half1[1] - (
+            (Plankend_u.y - div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0).y)
+            / (Plankend_u.x - div_P(halfRibCutLine_d, Plankend_u, x_pipe - 100, 0).x)
+        ) * (nikunukiKouenn_u_half1[0] - nikunukiKouenn_d_half_x)
         sannkakunikunuki_for_halfRib_kouenn = makeSannkakuNikunukiObject(
             convertYokugennRateGaishuuyohakuToZahyou(
                 nikunukiBasePoint_u_Kouenn_half[0],
                 sannkakunukunuki_base_move_y_u_kouenn_half[0],
             ),
             nikunukiKouenn_u_half1,
-            (nikunukiKouenn_d_half_x,nikunukiKouenn_d_half_y)
+            (nikunukiKouenn_d_half_x, nikunukiKouenn_d_half_y),
         )
-        makeSannkakuNinuki(file, sannkakunikunuki_for_halfRib_kouenn)       
-        
+        makeSannkakuNinuki(file, sannkakunikunuki_for_halfRib_kouenn)
+
     # 現在のリブの図面を出力 要精度-黒 作成時に使う線-青 補助線-ピンク
     # # 翼型 切らないのでピンク
     color(file, 255, 0, 255)
-    spline(file, FoilPs, O)    
+    spline(file, FoilPs, O)
     if k in halfRibNumber:
         fillet(
             file,
@@ -1346,7 +1497,7 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     color(file, 0, 0, 255)
     spline(file, CamberPs, O)
     # 翼弦　アセンブリで見るので青
-    color(file,0,0,255)
+    color(file, 0, 0, 255)
     line(file, FoilD[0], FoilD[-1], O)
     # プランク 切るので黒
     color(file, 0, 0, 0)
@@ -1358,14 +1509,14 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
         spline(file, RibCap_dPs, O)
     # ストリンガー出力 切るので黒
     color(file, 0, 0, 0)
-    #WriteStringer(file, StringerDT, O)
+    # WriteStringer(file, StringerDT, O)
     # WriteStringer(file, StringerDU, O)
     WriteStringer(file, stringerU1ToVec, O)
     WriteStringer(file, stringerU2ToVec, O)
     WriteStringer(file, stringerU3ToVec, O)
     WriteStringer(file, stringerD1ToVec, O)
     WriteStringer(file, stringerD2ToVec, O)
-    if k in (1,2,n_original-1,n_original):
+    if k in (1, 2, n_original - 1, n_original):
         WriteStringer(file, stringerD3ToVec, O)
     # WriteStringer(file, stringer(vector(xsl, 0), vector(0, 0), e, True), O)
 
@@ -1377,8 +1528,8 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     color(file, 0, 0, 0)
     WriteEllipse(file, Pipe, O)
     # アセンブリ棒穴　切るので黒
-    #color(file, 0, 0, 0)
-    #WriteCircle(file, Assembly, O)
+    # color(file, 0, 0, 0)
+    # WriteCircle(file, Assembly, O)
     # penguinの前縁側の一辺を出力 切ると思うので黒
     color(file, 0, 0, 0)
     # line(file, TrailU, TrailC, O)
@@ -1434,7 +1585,10 @@ for k in range(startRib , endRib + 1):  # range(1,n+1):				 	#根から k 枚目
     # 番号出力 切らないのでピンク
     color(file, 255, 0, 255)
     WriteText(
-        file, vector(O.x + c * 0.05, O.y + f_camber(c * 0.05)), f"{PlaneNumber}-{k}", height=7
+        file,
+        vector(O.x + c * 0.05, O.y + f_camber(c * 0.05)),
+        f"{PlaneNumber}-{k}",
+        height=7,
     )
 
 # 設定出力 切らないのでピンク

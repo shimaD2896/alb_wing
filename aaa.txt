@@ -1,4 +1,0 @@
-texted
-1
--lweight
-0.001

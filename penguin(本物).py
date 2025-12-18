@@ -12,41 +12,41 @@
 
 # ファイル関連
 # 出力するテキストファイルの名前。拡張子は不要
-ProjectName = "2wingpenguin"
+ProjectName = "5wingpenguin"
 # 翼型を保管しておき、コマンドファイルを出2024詩集版力するディレクトリのPath
 Directory = r"C:\Users\islan\OneDrive - OUMail (Osaka University)\ribwriting"
 
 # 翼関連
 # 端、根の翼弦長(流れ方向)[mm]
-RootChord = 1250
-EndChord = 1075
+RootChord = 749.49
+EndChord = 465
 # 端、根のねじり上げ(流れ方向)[°]
 RootDelta = 0
 EndDelta = 0
 # 端、根の翼型のファイル名 datファイルを入れる
-RootFoilName = "DAE-21.dat"
-EndFoilName = "DAE-21.dat"
+RootFoilName = "DAE-41.dat"
+EndFoilName = "DAE-41.dat"
 # リブ枚数(1つの翼に立てる枚数)
-n = 21
+n = 17
 # 分割してリブを出力
 isUseBunkatuShuturyoku = True
-startRib = 1 # 何枚目から出力を行うか
-endRib = 21  # 何枚目まで出力するか
+startRib = 1  # 何枚目から出力を行うか
+endRib = 17  # 何枚目まで出力するか
 # 何翼?
-PlaneNumber = "0"
+PlaneNumber = "5"
 # 半リブあり?
 use_half = True
 # 半リブは今回同時に出力するリブの何枚目か
-halfRibNumber = [3,5,7,9,11,13,15,17,19]
+halfRibNumber = [3, 5, 7, 9, 11, 13, 15]
 # 上反角を付けるために桁をy軸方向へ移動させるか？
 use_JouhannkakuChousei = False
 # 各リブのy軸の移動量をxに対応する翼厚みに対する％でリスト形式で渡す
 y_chousei = [0, 1, 2]
-#後縁前端止めの有無
+# 後縁前端止めの有無
 zenntanndome = False
-#リブキャップ止めの有無
-ribcapddome = True
-#🐧たちが被らないように調整
+# リブキャップ止めの有無
+ribcapddome = False
+# 🐧たちが被らないように調整
 zurashi_x = 200
 
 # リブ以外の要素関連
@@ -54,7 +54,7 @@ zurashi_x = 200
 tp = 2
 # リブキャップ厚さ[mm]
 tu = 0.03
-td = 1.0
+td = 0.03
 # ストリンガー断面の一辺[mm](翼弦垂直方向)
 e = 5
 # 下面のリブキャップをどれだけオフセットするか
@@ -64,17 +64,17 @@ e2 = 0.25
 # # リブキャップを🐧のどこまでのばすか[mm]
 length_of_adribcapd = 25
 # penguinの上下それぞれの大体の長さ
-#penguinlength_upper = 50
-#penguinlength_lower = 50
+# penguinlength_upper = 50
+# penguinlength_lower = 50
 # 後縁材の長さ[mm]
 Traillength = 30
 
 
 # 後縁材の前縁側の辺の長さ[mm]
-htu = 6 # 元は10
+penguinlength_lower = 60
+htu = 6  # 元は10
 Dadlength = 1.2
 # htd = 12 # 元は12
-
 
 
 # 設定値はあざみ野の翼を参考にしている
@@ -201,7 +201,7 @@ class stringer:
     .A、.B、.C、.Dがそれぞれの点
     """
 
-    def __init__(self, A, P, e, e1,R=False):
+    def __init__(self, A, P, e, e1, R=False):
         self.A = A
         self.P = P
         self.e = e
@@ -276,19 +276,20 @@ def WriteEllipse(file, ell, O=vector(0, 0)):
         f"ellipse\nc\n{ell.C.x+O.x},{ell.C.y+O.y}\n{ell.P.x+O.x},{ell.P.y+O.y}\n{ell.b}\n"
     )
 
-def WriteARC(file, center, P1, P2, O=vector(0,0)):
+
+def WriteARC(file, center, P1, P2, O=vector(0, 0)):
     """中心center、始点P1、終点P2の円弧を描くコマンドをfileに出力"""
     file.write(
         f"arc\n_c\n{center.x+O.x},{center.y+O.y}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n\n"
     )
 
-def fillet(file, P1, P2, r, O=vector(0,0)):
+
+def fillet(file, P1, P2, r, O=vector(0, 0)):
     """三角肉抜き穴の角を丸めるコマンドをfileに出力
     P1,P2をそれぞれ通る線の角を半径rで丸める"""
-    file.write(
-        f"fillet\n_r\n{r}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n"
-    )
-    
+    file.write(f"fillet\n_r\n{r}\n{P1.x+O.x},{P1.y+O.y}\n{P2.x+O.x},{P2.y+O.y}\n")
+
+
 def WriteCircle(file, circle, O=vector(0, 0), WriteCenter=True):
     """circleオブジェクトを出力するコマンドを出力"""
     file.write(
@@ -549,7 +550,7 @@ RootFoilDataD_y = to_numpy_y(RootFoilDataD)  # 下側のy座標(無次元)
 f_uEnd = inter(
     EndFoilDataU_x[::-1] * EndChord * cos(sweep), EndFoilDataU_y[::-1] * EndChord
 )
-f_dEnd = inter(EndFoilDataD_x * EndChord* cos(sweep), EndFoilDataD_y * EndChord)
+f_dEnd = inter(EndFoilDataD_x * EndChord * cos(sweep), EndFoilDataD_y * EndChord)
 f_uRoot = inter(
     RootFoilDataU_x[::-1] * RootChord * cos(sweep), RootFoilDataU_y[::-1] * RootChord
 )
@@ -560,7 +561,7 @@ RootFoilPs = [
 ]
 
 
-file = open(f"{ProjectName}.txt", "w",encoding="utf-8")
+file = open(f"{ProjectName}.txt", "w", encoding="utf-8")
 
 file.write("texted\n1\n")  # textをコマンドで入力できるように設定
 file.write("-lweight\n0.001\n")  # 線の太さ設定
@@ -619,8 +620,6 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
     CamberPs = to_vectors2(s, f_camber(s))
     del s
 
-
-   
     # 🐧の出力
     # 🐧の上側の一点を求める。下をoffsetした関数と上の関数の交点とする。
     FoilD_offsetPs = offset(FoilD[5:], htu, 0)
@@ -642,9 +641,12 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
     TrailU = vector(TrailU_x, f_u(TrailU_x))
     del s
 
+    TrailD_x = (c - penguinlength_lower) * cos(sweep)
+    TrailD = vector(TrailD_x, f_d(TrailD_x))
+
+    """
     TrailD_x =  TrailU_x - (c*Dadlength/100)  # -10は勘
     TrailD = vector(TrailD_x, f_d(TrailD_x))
-    """
     # 🐧の下側の一点を求める。 TrailUを挟む点を求め、これら三点でoffsetする。
     FoilU_offsetPs = offset(FoilU[::-1][1:], htd, 1)
     s = numpy.linspace(FoilU_offsetPs[0].x, FoilU_offsetPs[-1].x)
@@ -660,63 +662,93 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
     """
     x_stringer_D1 = TrailD_x + length_of_adribcapd
     stringerD1 = [
-        FoilD[i]
-        for i in range(1, len(FoilD))
-        if FoilD[i - 1].x <= x_stringer_D1
+        FoilD[i] for i in range(1, len(FoilD)) if FoilD[i - 1].x <= x_stringer_D1
     ][-2:]
     stringerD1ToVec = stringer(
-        div_P(stringerD1[0], stringerD1[1], x_stringer_D1, 0), stringerD1[0], e, e1, R=True
-    )    
+        div_P(stringerD1[0], stringerD1[1], x_stringer_D1, 0),
+        stringerD1[0],
+        e,
+        e1,
+        R=True,
+    )
 
-    #🐧の凹の部分の点
-    TrailC_x = TrailU_x + 5  #+10は勘 
+    # 🐧の凹の部分の点
+    TrailC_x = TrailU_x + 5  # +10は勘
     TrailC = vector(TrailC_x, f_camber(TrailC_x))
-    realTrailD_x = optimize.newton(lambda x: (c - x)**2 + f_d(x)**2 - Traillength**2, c * cos(sweep) * 0.95)
+    realTrailD_x = optimize.newton(
+        lambda x: (c - x) ** 2 + f_d(x) ** 2 - Traillength**2, c * cos(sweep) * 0.95
+    )
     realTrailD = vector(realTrailD_x, f_d(realTrailD_x))
-    realTrailU_x = optimize.newton(lambda x: (c - x)**2 + f_u(x)**2 - Traillength**2, c * cos(sweep) * 0.95)
+    realTrailU_x = optimize.newton(
+        lambda x: (c - x) ** 2 + f_u(x) ** 2 - Traillength**2, c * cos(sweep) * 0.95
+    )
     realTrailU = vector(realTrailU_x, f_u(realTrailU_x))
 
     # リブキャップの点のリストの出力 プランクの開始点より後縁側であることを利用
     RibCap_uPs = offset(
-        [FoilU[i] for i in range(0, len(FoilU)) if (FoilU[i - 2].x >= TrailU_x) and (FoilU[i].x < realTrailU_x)], tu, 0
+        [
+            FoilU[i]
+            for i in range(0, len(FoilU))
+            if (FoilU[i - 2].x >= TrailU_x) and (FoilU[i].x < realTrailU_x)
+        ],
+        tu,
+        0,
     )
     TrailU_uPs = offset(
-        [FoilU[i] for i in range(0, len(FoilU)) if FoilU[i].x > realTrailU_x], tu + e2, 0
+        [FoilU[i] for i in range(0, len(FoilU)) if FoilU[i].x > realTrailU_x],
+        tu + e2,
+        0,
     )
     stringerU1 = [
         RibCap_uPs[i]
         for i in range(1, len(RibCap_uPs))
         if RibCap_uPs[i - 1].x <= realTrailU_x
-    ][:2]    
+    ][:2]
     stringerU1ToVec = stringer(
-        div_P(stringerU1[0], stringerU1[1], realTrailU_x, 0), stringerU1[0], e, e2, R=False
+        div_P(stringerU1[0], stringerU1[1], realTrailU_x, 0),
+        stringerU1[0],
+        e,
+        e2,
+        R=False,
     )
-    RibCap_uPs.insert(0,stringerU1ToVec.A)
+    RibCap_uPs.insert(0, stringerU1ToVec.A)
     TrailU_uPs.append(stringerU1ToVec.D)
 
     if ribcapddome:
-        RibCap_dPs =offset(
-            [FoilD[i] for i in range(len(FoilD) - 2) if (FoilD[i + 2].x >= TrailD_x) and (FoilD[i].x < x_stringer_D1)], td, 0
+        RibCap_dPs = offset(
+            [
+                FoilD[i]
+                for i in range(len(FoilD) - 2)
+                if (FoilD[i + 2].x >= TrailD_x) and (FoilD[i].x < x_stringer_D1)
+            ],
+            td,
+            0,
         )
         RibCap_dPs.append(stringerD1ToVec.D)
         TrailD_dPs = offset(
             [FoilD[i] for i in range(0, len(FoilD)) if FoilD[i].x > realTrailD_x], e2, 0
         )
-        FoilD =[FoilD[i] for i in range(len(FoilD) -2 ) if (FoilD[i].x > x_stringer_D1) and (FoilD[i].x <= (realTrailD_x + 1))]
-        FoilD.insert(0,stringerD1ToVec.A)
+        FoilD = [
+            FoilD[i]
+            for i in range(len(FoilD) - 2)
+            if (FoilD[i].x > x_stringer_D1) and (FoilD[i].x <= (realTrailD_x + 1))
+        ]
+        FoilD.insert(0, stringerD1ToVec.A)
 
         stringerD2 = [
-            FoilD[i]
-            for i in range(1, len(FoilD))
-            if FoilD[i - 1].x <= realTrailD_x
-        ][:2]
+            FoilD[i] for i in range(1, len(FoilD)) if FoilD[i - 1].x <= realTrailD_x
+        ]
         stringerD2ToVec = stringer(
-            div_P(stringerD2[0], stringerD2[1], realTrailD_x, 0), stringerD2[0], e, e2, R=True
+            div_P(stringerD2[-1], stringerD2[-2], realTrailD_x, 0),
+            stringerD2[0],
+            e,
+            e2,
+            R=True,
         )
         # FoilD.append(stringerD2ToVec.A)
-        Traildome = div_P(stringerD2ToVec.A, stringerD2ToVec.D,-2,1)
-        TrailD_dPs.insert(0,stringerD2ToVec.D)
-        
+        Traildome = div_P(stringerD2ToVec.A, stringerD2ToVec.D, -2, 1)
+        TrailD_dPs.insert(0, stringerD2ToVec.D)
+
         dline_x = to_numpy_x(FoilD)
         dline_y = to_numpy_y(FoilD)
 
@@ -727,36 +759,51 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
 
     else:
         RibCap_dPs = offset(
-            [FoilD[i] for i in range(len(FoilD)-2) if (FoilD[i + 2].x >= TrailD_x) and (FoilD[i].x < realTrailD_x)], td, 0
+            [
+                FoilD[i]
+                for i in range(len(FoilD) - 2)
+                if (FoilD[i + 2].x >= TrailD_x) and (FoilD[i].x < realTrailD_x)
+            ],
+            td,
+            0,
         )
         stringerD2 = [
             RibCap_dPs[i]
             for i in range(1, len(RibCap_dPs))
-            if RibCap_dPs[i - 1].x <= realTrailD_x
-        ][:2]
+            if RibCap_dPs[i].x <= realTrailD_x
+        ]
         stringerD2ToVec = stringer(
-            div_P(stringerD2[0], stringerD2[1], realTrailD_x, 0), stringerD2[0], e, e2, R=True
+            div_P(stringerD2[-1], stringerD2[-2], realTrailD_x, 0),
+            stringerD2[0],
+            e,
+            e2,
+            R=True,
         )
+        print(len(stringerD2))
+
+        Traildome = div_P(stringerD2ToVec.A, stringerD2ToVec.D, -2, 1)
         RibCap_dPs.append(stringerD2ToVec.A)
         TrailD_dPs = offset(
-            [FoilD[i] for i in range(0, len(FoilD)) if FoilD[i].x > realTrailD_x], td + e2, 0
+            [FoilD[i] for i in range(0, len(FoilD)) if FoilD[i].x > realTrailD_x],
+            e2,
+            0,
         )
-        TrailD_dPs.insert(0,stringerD2ToVec.D)
+        TrailD_dPs.insert(0, stringerD2ToVec.D)
 
         dline_x = to_numpy_x(RibCap_dPs)
         dline_y = to_numpy_y(RibCap_dPs)
-        
 
-    if zenntanndome:#こいつは負の遺産無視しろ
+    if zenntanndome:  # こいつは負の遺産無視しろ
         RibCap_doffset = inter(dline_x, dline_y)
-        #後縁前端棒止め
+        # 後縁前端棒止め
         ht = 5
         htl = 5.1
         FoilU_offsetKs = offset(RibCap_uPs[::-1], ht, 1)
         dome_uOffset = inter(to_numpy_x(FoilU_offsetKs), to_numpy_y(FoilU_offsetKs))
 
-
-        DomeD_x = optimize.newton(lambda x: dome_uOffset(x) - RibCap_doffset(x), c * cos(sweep) * 0.97)
+        DomeD_x = optimize.newton(
+            lambda x: dome_uOffset(x) - RibCap_doffset(x), c * cos(sweep) * 0.97
+        )
         DomeD = vector(DomeD_x, RibCap_doffset(DomeD_x))
 
         EdgedomeD = [
@@ -768,41 +815,44 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
         ]  # TrailUを挟む点
         DomeU = offset([EdgedomeD[0], DomeD, EdgedomeD[1]], ht, 0)[0]
 
-        DomeUl = DomeU + vector(DomeD.y - DomeU.y, DomeU.x - DomeD.x)* htl / math.sqrt((DomeU.y - DomeD.y)**2 + (DomeD.x - DomeU.x)**2)
-        DomeDl = DomeD + vector(DomeD.y - DomeU.y, DomeU.x - DomeD.x)* htl / math.sqrt((DomeU.y - DomeD.y)**2 + (DomeD.x - DomeU.x)**2)
+        DomeUl = DomeU + vector(DomeD.y - DomeU.y, DomeU.x - DomeD.x) * htl / math.sqrt(
+            (DomeU.y - DomeD.y) ** 2 + (DomeD.x - DomeU.x) ** 2
+        )
+        DomeDl = DomeD + vector(DomeD.y - DomeU.y, DomeU.x - DomeD.x) * htl / math.sqrt(
+            (DomeU.y - DomeD.y) ** 2 + (DomeD.x - DomeU.x) ** 2
+        )
 
         if k not in halfRibNumber:
-            #後縁前端棒止め
+            # 後縁前端棒止め
             color(file, 255, 0, 255)
             line(file, DomeU, DomeD, O)
             line(file, DomeD, DomeDl, O)
             line(file, DomeDl, DomeUl, O)
             line(file, DomeUl, DomeU, O)
 
-
     if k not in halfRibNumber:
         # リブキャップ
         color(file, 255, 0, 255)
         spline(file, RibCap_uPs, O)
-        line(file, stringerU1ToVec.D, vector(c*cos(sweep),0), O)
+        line(file, stringerU1ToVec.D, vector(c * cos(sweep), 0), O)
         # spline(file, TrailU_uPs, O)
         spline(file, RibCap_dPs, O)
         line(file, stringerU1ToVec.A, stringerU1ToVec.D, O)
         if ribcapddome:
             spline(file, FoilD, O)
-            line(file, stringerD2ToVec.D, vector(c*cos(sweep),0), O)
+            line(file, stringerD2ToVec.D, vector(c * cos(sweep), 0), O)
             # spline(file, TrailD_dPs, O)
             line(file, stringerD1ToVec.A, stringerD1ToVec.D, O)
             line(file, Traildome, stringerD2ToVec.D, O)
 
         else:
-            line(file, stringerD2ToVec.D, vector(c*cos(sweep),0), O)
+            line(file, stringerD2ToVec.D, vector(c * cos(sweep), 0), O)
             # spline(file, TrailD_dPs, O)
             line(file, Traildome, stringerD2ToVec.D, O)
 
-        # 🐧の前縁側の一辺を出力 
+        # 🐧の前縁側の一辺を出力
         color(file, 255, 0, 255)
-        line(file, TrailU, TrailD, O)  
+        line(file, TrailU, TrailD, O)
         # line(file, TrailU, TrailC, O)
         # line(file, TrailD, TrailC, O)
         # 後縁材の一辺を出力
@@ -810,9 +860,13 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
         line(file, realTrailU, realTrailD, O)
 
         color(file, 255, 0, 255)
-        WriteText(file, vector(O.x + c - 60, f_camber(c * 0.95)-30), f"{PlaneNumber}-{k}", height=8)
+        WriteText(
+            file,
+            vector(O.x + c - 60, f_camber(c * 0.95) - 30),
+            f"{PlaneNumber}-{k}",
+            height=8,
+        )
 
-        
 
 file.close()
 print("completed")
