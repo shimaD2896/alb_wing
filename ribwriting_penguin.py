@@ -12,7 +12,7 @@
 
 # ファイル関連
 # 出力するテキストファイルの名前。拡張子は不要
-ProjectName = "5wing"
+ProjectName = "3wing"
 # 翼型を保管しておき、コマンドファイルを出2024詩集版力するディレクトリのPath
 Directory = r"C:\Users\islan\OneDrive - OUMail (Osaka University)\ribwriting"
 # テキストファイルに追加書き込みするか、すべて消して新たに書き込むか
@@ -27,39 +27,39 @@ kakikomi = "w"  # 追加書き込みなら"a"、消して新たに書き込み�
 # RootChord_original = 1250
 # EndChord_original = 1075
 # 3翼
-# RootChord_original = 1075
-# EndChord_original = 903
+RootChord_original = 1075
+EndChord_original = 903
 # 4翼
 # RootChord_original = 903
 # EndChord_original = 749.49
 # 5翼
-RootChord_original = 749.49
-EndChord_original = 465
+# RootChord_original = 749.49
+# EndChord_original = 465
 
 # 端、根のねじり上げ(流れ方向)[°]
 RootDelta = 0
-# EndDelta = 0
+EndDelta = 0
 # 5翼
-EndDelta = -2
+# EndDelta = -2
 # 端、根の桁位置[%]
 RootR = 37
 EndR = 37
 # 端、根の翼型のファイル名 datファイルを入れる
-RootFoilName = "DAE-41.dat"
-EndFoilName = "DAE-41.dat"
+RootFoilName = "DAE-21.dat"
+EndFoilName = "DAE-21.dat"
 # リブ枚数(1つの翼に立てる枚数)
-n_original = 17
+n_original = 21
 # 分割してリブを出力
 isUseBunkatuShuturyoku = True
-startRib = 1  # 何枚目から出力を行うか
-endRib = 17  # 何枚目まで出力するか
+startRib = 2  # 何枚目から出力を行うか
+endRib = 20  # 何枚目まで出力するか
 
 # 何翼?
-PlaneNumber = "5"
+PlaneNumber = "3"
 # 半リブあり?
 use_half = True
 # 半リブは何枚目か
-halfRibNumber = [3, 5, 7, 9, 11, 13, 15]
+halfRibNumber = [3, 5, 7, 9, 11, 13, 15, 17, 19]
 # 上反角を付けるために桁をy軸方向へ移動させるか？
 use_JouhannkakuChousei = False
 # 各リブのy軸の移動量をxに対応する翼厚みに対する％でリスト形式で渡す
@@ -74,7 +74,7 @@ e = 5
 e1 = 5.5
 # リブキャップ厚さ[mm]
 tu = 0.03
-td = 0.03
+td = 1.0
 # 桁径[mm]	楕円の短軸方向
 # 0翼
 # d = 132.72
@@ -83,11 +83,11 @@ td = 0.03
 # 2翼
 # d = 101.832
 # 3翼
-# d = 90.916
+d = 90.916
 # 4翼
 # d = 71.466
 # 5翼
-d = 41.166
+# d = 41.166
 # 桁径		楕円の長軸-短軸 円なら0
 # 0翼
 # dd = 134.496 - d
@@ -96,11 +96,11 @@ d = 41.166
 # 2翼
 # dd = 103.608 - d
 # 3翼
-# dd = 92.47 - d
+dd = 92.47 - d
 # 4翼
 # dd = 72.132 - d
 # 5翼
-dd = 41.166 - d
+# dd = 41.166 - d
 # アセンブリ棒径[mm]
 da = 30  # 元は30
 # アセンブリ棒余白[mm]
@@ -112,7 +112,7 @@ htu = 6
 # htd = 12
 # penguinの上下それぞれの大体の長さ
 # penguinlength_upper = 50
-penguinlength_lower = 60
+penguinlength_lower = 75
 # ハーフリブのカットラインと桁穴の余裕[mm]
 halfRibYoyuu = 6  # 普通は５くらい
 # 後縁材の長さ[mm]
@@ -139,25 +139,25 @@ w_circle = 15
 # 主翼用設定値
 # プランク上開始位置[%]
 # 0,1,2,3翼
-# rpur = 63
-# rpue = 63
+rpur = 63
+rpue = 63
 # 4翼
 # rpur = 63
 # rpue = 60
 # 5翼
-rpur = 60
-rpue = 61
+# rpur = 60
+# rpue = 61
 
 # プランク下開始位置[%] r plank downside
 # 0,1,2,3翼
-# rpdr = 12
-# rpde = 12
+rpdr = 12
+rpde = 12
 # 4翼
 # rpdr = 23
 # rpde = 23
 # 5翼
-rpdr = 25
-rpde = 25
+# rpdr = 25
+# rpde = 25
 
 # # 尾翼用設定値
 # rpu = 30
@@ -180,14 +180,14 @@ xsl = 20 + e
 # rootstringerURate = [4, 12.5, 60.6]
 # endstringerURate = [4, 12.5, 60.2]
 # 3翼
-# rootstringerURate = [4, 12.5, 60.2]
-# endstringerURate = [4, 12.5, 59.7]
+rootstringerURate = [4, 12.5, 60.2]
+endstringerURate = [4, 12.5, 59.7]
 # 4翼
 # rootstringerURate = [4,12.5,59.7]
 # endstringerURate = [4,12.5, 56.8]
 # 5翼
-rootstringerURate = [4, 12.5, 57]
-endstringerURate = [4, 12.5, 57]
+# rootstringerURate = [4, 12.5, 57]
+# endstringerURate = [4, 12.5, 57]
 
 # ストリンガー位置翼下部[%]
 # 0翼
@@ -200,14 +200,14 @@ endstringerURate = [4, 12.5, 57]
 # rootstringerDRate = [4.5,9,54]
 # endstringerDRate = [4.5,9,54]
 # 3翼
-# rootstringerDRate = [4.5,9,54]
-# endstringerDRate = [4.5,9,54]
+rootstringerDRate = [4.5, 9, 54]
+endstringerDRate = [4.5, 9, 54]
 # 4翼
 # rootstringerDRate = [4.5,20,54]
 # endstringerDRate = [5,20,54]
 # 5翼
-rootstringerDRate = [5, 20, 52]
-endstringerDRate = [5, 20, 52]
+# rootstringerDRate = [5, 20, 52]
+# endstringerDRate = [5, 20, 52]
 
 # # 尾翼用
 # ストリンガー位置翼上部[%]
@@ -222,75 +222,76 @@ endstringerDRate = [5, 20, 52]
 
 # トラス肉抜きを行うための基準点を指定する(翼弦に対する％表示で設定を行う)
 # 以下は翼根側の設定
+# DAE-21
 # 前縁側上面
-rootnikunukiBasePoint_u_Zenenn = [5.5, 10.87, 13.4, 15.5, 24.05, 26.8]
+rootnikunukiBasePoint_u_Zenenn = [5.5, 10.52, 12.41, 14.5, 23.57, 26]
 # 前縁側下面
-rootnikunukiBasePoint_d_Zenenn = [8.22, 10.4, 17.38, 20.02, 22.5, 31.5]
+rootnikunukiBasePoint_d_Zenenn = [8.18, 10, 17.51, 20.08, 22.5, 31.5]
 # 後縁側上面
-rootnikunukiBasePoint_u_Kouenn = [46.28, 48.72, 55.22, 57.5, 59.77, 65.1, 67.07]
+rootnikunukiBasePoint_u_Kouenn = [47, 50.03, 57.82, 60.06, 62.79, 68.82, 71.24]
 # 後縁側下面
-rootnikunukiBasePoint_d_Kouenn = [43, 49.9, 52, 54.22, 60.4, 62.5, 64.73, 70]
+rootnikunukiBasePoint_d_Kouenn = [43, 51.7, 54.2, 56.8, 63.41, 65.89, 68.54, 73]
 # 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも前縁側)
-rootsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.25, -0.25, -0.25, -0.25, -0.21]
-rootsannkakunukunuki_base_move_y_d_zenenn = [0.25, 0.25, 0.25, 0.23, 0.25, 0.25]
+rootsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.20, -0.20, -0.20, -0.20, -0.18]
+rootsannkakunukunuki_base_move_y_d_zenenn = [0.20, 0.20, 0.20, 0.18, 0.20, 0.20]
 ## 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも後縁側)
 rootsannkakunukunuki_base_move_y_u_kouenn = [
-    -0.22,
-    -0.26,
-    -0.29,
+    -0.14,
+    -0.20,
+    -0.20,
+    -0.20,
+    -0.20,
     -0.25,
-    -0.25,
-    -0.3,
-    -0.3,
+    -0.20,
 ]
 rootsannkakunukunuki_base_move_y_d_kouenn = [
+    0.16,
+    0.18,
+    0.18,
+    0.20,
+    0.20,
+    0.20,
+    0.23,
     0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.28,
-    0.3,
 ]
 # ハーフリブを利用する際の肉抜き
-rootnikunukiBasePoint_u_Kouenn_half = [46, 54]
+rootnikunukiBasePoint_u_Kouenn_half = [46, 57]
 # 各肉抜き点のy座標方向の移動
 rootsannkakunukunuki_base_move_y_u_kouenn_half = [-0.15, -0.15]
 
 # 前縁側上面
-endnikunukiBasePoint_u_Zenenn = [5.5, 10.87, 13.4, 15.5, 24.05, 26.8]
+endnikunukiBasePoint_u_Zenenn = [5.5, 10.52, 12.41, 14.5, 23.57, 26]
 # 前縁側下面
-endnikunukiBasePoint_d_Zenenn = [8.22, 10.4, 17.38, 20.02, 22.5, 31.5]
+endnikunukiBasePoint_d_Zenenn = [8.18, 10, 17.51, 20.08, 22.5, 31.5]
 # 後縁側上面
-endnikunukiBasePoint_u_Kouenn = [46.28, 48.72, 55.22, 57.5, 59.77, 65.1, 67.07]
+endnikunukiBasePoint_u_Kouenn = [47, 50.03, 57.82, 60.06, 62.29, 68.82, 71.24]
 # 後縁側下面
-endnikunukiBasePoint_d_Kouenn = [43, 49.9, 52, 54.22, 60.4, 62.5, 64.73, 70]
+endnikunukiBasePoint_d_Kouenn = [43, 51.7, 54.2, 56.8, 63.41, 65.89, 68.54, 73]
 # 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも前縁側)
-endsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.25, -0.25, -0.25, -0.25, -0.21]
-endsannkakunukunuki_base_move_y_d_zenenn = [0.25, 0.25, 0.25, 0.23, 0.25, 0.25]
+endsannkakunukunuki_base_move_y_u_zenenn = [-0.50, -0.20, -0.20, -0.20, -0.20, -0.18]
+endsannkakunukunuki_base_move_y_d_zenenn = [0.20, 0.20, 0.20, 0.18, 0.20, 0.20]
 # 各肉抜きを行うための基準点の翼厚みに対する移動距離(桁穴よりも後縁側)
 endsannkakunukunuki_base_move_y_u_kouenn = [
-    -0.22,
-    -0.26,
-    -0.29,
-    -0.25,
-    -0.25,
-    -0.3,
-    -0.3,
+    -0.14,
+    -0.20,
+    -0.20,
+    -0.20,
+    -0.20,
+    -0.20,
+    -0.20,
 ]
 endsannkakunukunuki_base_move_y_d_kouenn = [
+    0.16,
+    0.18,
+    0.20,
+    0.20,
+    0.20,
+    0.20,
+    0.23,
     0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.25,
-    0.28,
-    0.3,
 ]
 # ハーフリブを利用する際の肉抜き
-endnikunukiBasePoint_u_Kouenn_half = [46, 54]
+endnikunukiBasePoint_u_Kouenn_half = [46, 57]
 # 各肉抜き点のy座標方向の移動
 endsannkakunukunuki_base_move_y_u_kouenn_half = [-0.15, -0.15]
 

@@ -12,32 +12,32 @@
 
 # ファイル関連
 # 出力するテキストファイルの名前。拡張子は不要
-ProjectName = "5wingpenguin"
+ProjectName = "3wingpenguin"
 # 翼型を保管しておき、コマンドファイルを出2024詩集版力するディレクトリのPath
 Directory = r"C:\Users\islan\OneDrive - OUMail (Osaka University)\ribwriting"
 
 # 翼関連
 # 端、根の翼弦長(流れ方向)[mm]
-RootChord = 749.49
-EndChord = 465
+RootChord = 1075
+EndChord = 903
 # 端、根のねじり上げ(流れ方向)[°]
 RootDelta = 0
 EndDelta = 0
 # 端、根の翼型のファイル名 datファイルを入れる
-RootFoilName = "DAE-41.dat"
-EndFoilName = "DAE-41.dat"
+RootFoilName = "DAE-21.dat"
+EndFoilName = "DAE-21.dat"
 # リブ枚数(1つの翼に立てる枚数)
-n = 17
+n = 21
 # 分割してリブを出力
 isUseBunkatuShuturyoku = True
 startRib = 1  # 何枚目から出力を行うか
-endRib = 17  # 何枚目まで出力するか
+endRib = 21  # 何枚目まで出力するか
 # 何翼?
-PlaneNumber = "5"
+PlaneNumber = "3"
 # 半リブあり?
 use_half = True
 # 半リブは今回同時に出力するリブの何枚目か
-halfRibNumber = [3, 5, 7, 9, 11, 13, 15]
+halfRibNumber = [3, 5, 7, 9, 11, 13, 15, 17, 19]
 # 上反角を付けるために桁をy軸方向へ移動させるか？
 use_JouhannkakuChousei = False
 # 各リブのy軸の移動量をxに対応する翼厚みに対する％でリスト形式で渡す
@@ -45,7 +45,7 @@ y_chousei = [0, 1, 2]
 # 後縁前端止めの有無
 zenntanndome = False
 # リブキャップ止めの有無
-ribcapddome = False
+ribcapddome = True
 # 🐧たちが被らないように調整
 zurashi_x = 200
 
@@ -54,7 +54,7 @@ zurashi_x = 200
 tp = 2
 # リブキャップ厚さ[mm]
 tu = 0.03
-td = 0.03
+td = 1.0
 # ストリンガー断面の一辺[mm](翼弦垂直方向)
 e = 5
 # 下面のリブキャップをどれだけオフセットするか
@@ -71,7 +71,7 @@ Traillength = 30
 
 
 # 後縁材の前縁側の辺の長さ[mm]
-penguinlength_lower = 60
+penguinlength_lower = 75
 htu = 6  # 元は10
 Dadlength = 1.2
 # htd = 12 # 元は12
@@ -689,7 +689,7 @@ for k in range(1, n + 1):  # range(1,n+1):				 	#根から k 枚目のリブ
         [
             FoilU[i]
             for i in range(0, len(FoilU))
-            if (FoilU[i - 2].x >= TrailU_x) and (FoilU[i].x < realTrailU_x)
+            if (FoilU[i - 3].x >= TrailU_x) and (FoilU[i].x < realTrailU_x)
         ],
         tu,
         0,
